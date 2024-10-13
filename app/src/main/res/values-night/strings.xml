@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="trip_name">Trip Name</string>
+    <string name="enter_trip_name">Enter trip name</string>
+    <string name="add_new_trip">➕ Add New Trip</string>
+    <string name="view_trips">🗂️ View Trips</string>
+    <string name="add_mushroom_details">🍄 Add Mushroom Details</string>
+    <string name="settings">⚙️ Settings</string>
+    <string name="trip_name_date">Trip Name - Date</string>
+    <string name="recent_activity">Recent Activity:</string>
+    <string name="help">❓ Help</string>
+</resources>
