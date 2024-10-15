@@ -24,10 +24,9 @@ The Mushroom Hunting Tracker is an Android application designed for mushroom ent
 To run this application locally:
 
 	1.	Clone the repository:
-
-git clone https://github.com/yourusername/MushroomHuntingApp.git
-
-
+####
+		git clone https://github.com/yourusername/MushroomHuntingApp.git
+####
 	2.	Open the project in Android Studio.
 	3.	Build and run the app on an Android emulator or physical device.
 
