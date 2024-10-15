@@ -3,33 +3,28 @@ package com.example.mushroomhunting.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.mushroomhunting.R;
 
 public class MainActivity extends AppCompatActivity {
-
-    private Button btnAddTrip;
-    private Button btnViewTrips;
-    private Button btnAddMushroomDetails;
-    private Button btnSettings;
-    private Button btnHelp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Initialize buttons
-        btnAddTrip = findViewById(R.id.btnAddTrip);
-        btnViewTrips = findViewById(R.id.btnViewTrips);
-        btnAddMushroomDetails = findViewById(R.id.btnAddMushroomDetails);
-        btnSettings = findViewById(R.id.btnSettings);
-        btnHelp = findViewById(R.id.btnHelp);
+        // Initialize layout containers instead of buttons
+        ConstraintLayout addTripLayout = findViewById(R.id.addTripLayout);
+        ConstraintLayout viewTripsLayout = findViewById(R.id.viewTripsLayout);
+        ConstraintLayout addMushroomDetailsLayout = findViewById(R.id.addMushroomDetailsLayout);
+        TextView settingsButton = findViewById(R.id.settingsButton);
+        TextView helpButton = findViewById(R.id.helpButton);
 
-        // Set onClick listeners for each button
-        btnAddTrip.setOnClickListener(new View.OnClickListener() {
+        // Set onClick listeners for each layout
+        addTripLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Open the Add New Trip Activity
@@ -38,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnViewTrips.setOnClickListener(new View.OnClickListener() {
+        viewTripsLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Open the View Trips Activity
@@ -47,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnAddMushroomDetails.setOnClickListener(new View.OnClickListener() {
+        addMushroomDetailsLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Open the Add Mushroom Details Activity
@@ -56,7 +51,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnSettings.setOnClickListener(new View.OnClickListener() {
+        // Set onClick listeners for Settings and Help buttons
+        settingsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Open the Settings Activity
@@ -65,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnHelp.setOnClickListener(new View.OnClickListener() {
+        helpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Open the Help Activity
