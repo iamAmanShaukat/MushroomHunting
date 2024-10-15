@@ -1,121 +1,237 @@
- <!-- res/layout/activity_main.xml -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:orientation="vertical"
-android:gravity="center_horizontal"
-android:padding="16dp"
-android:background="#FFFFFF">
-
-<!-- App Header with Logo and Title -->
-<LinearLayout
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:gravity="center_vertical"
-    android:padding="8dp">
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".activity.MainActivity">
 
-    <!-- App Logo -->
-    <ImageView
-        android:id="@+id/appLogo"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:src="@drawable/mushroom_app_icon" />
+    <!-- App Header with Logo and Title -->
+    <LinearLayout
+        android:id="@+id/appHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <!-- App Title -->
+        <!-- App Logo -->
+        <ImageView
+            android:id="@+id/appLogo"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/mushroom_app_icon" />
+
+        <!-- App Title -->
+        <TextView
+            android:id="@+id/appTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mushroom Hunting Tracker"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp" />
+    </LinearLayout>
+
+    <!-- Add New Trip Layout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/addTripLayout"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/list_background_1"
+        app:layout_constraintTop_toBottomOf="@+id/appHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/background_img_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.666"
+            app:srcCompat="@drawable/bg_1" />
+
+        <ImageView
+            android:id="@+id/addTripIcon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:srcCompat="@drawable/travel_icon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp" />
+
+        <TextView
+            android:id="@+id/addTripText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add New Trip"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            app:layout_constraintStart_toEndOf="@+id/addTripIcon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="16dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- View Trips Layout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/viewTripsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/list_background_2"
+        app:layout_constraintTop_toBottomOf="@+id/addTripLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/background_img_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.666"
+            app:srcCompat="@drawable/bg_2" />
+
+        <ImageView
+            android:id="@+id/viewTripsIcon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:srcCompat="@drawable/view_eye_icon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp" />
+
+        <TextView
+            android:id="@+id/viewTripsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View Trips"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            app:layout_constraintStart_toEndOf="@+id/viewTripsIcon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="16dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Add Mushroom Details Layout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/addMushroomDetailsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/list_background_1"
+        app:layout_constraintTop_toBottomOf="@+id/viewTripsLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/background_img_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.666"
+            app:srcCompat="@drawable/bg_3" />
+
+        <ImageView
+            android:id="@+id/addMushroomIcon"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:srcCompat="@drawable/add_icon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp" />
+
+        <TextView
+            android:id="@+id/addMushroomText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Mushroom Details"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            app:layout_constraintStart_toEndOf="@+id/addMushroomIcon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="16dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Recent Activity Section -->
     <TextView
-        android:id="@+id/appTitle"
+        android:id="@+id/recentActivityLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/mushroom_hunting_tracker"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_marginStart="16dp"
-        android:textColor="#000000" />
-</LinearLayout>
-
-<!-- Add New Trip Button -->
-<Button
-    android:id="@+id/btnAddTrip"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="@string/add_new_trip"
-    android:textSize="18sp"
-    android:padding="12dp"
-    android:textColor="#FFFFFF"
-    android:backgroundTint="#4CAF50"
-    android:layout_marginTop="16dp" />
-
-<!-- View Trips Button -->
-<Button
-    android:id="@+id/btnViewTrips"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="@string/view_trips"
-    android:textSize="18sp"
-    android:padding="12dp"
-    android:textColor="#FFFFFF"
-    android:backgroundTint="#2196F3"
-    android:layout_marginTop="16dp" />
-
-<!-- Add Mushroom Details Button -->
-<Button
-    android:id="@+id/btnAddMushroomDetails"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="@string/add_mushroom_details"
-    android:textSize="18sp"
-    android:padding="12dp"
-    android:textColor="#FFFFFF"
-    android:backgroundTint="#FF9800"
-    android:layout_marginTop="16dp" />
-
-<!-- Recent Activity Section -->
-<TextView
-    android:id="@+id/recentActivityLabel"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="@string/recent_activity"
-    android:textSize="16sp"
-    android:paddingTop="24dp"
-    android:textColor="#000000" />
-
-<!-- Placeholder for a recent activity (can be dynamically populated) -->
-<TextView
-    android:id="@+id/recentTripInfo"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="@string/trip_name_date"
-    android:textSize="16sp"
-    android:padding="12dp"
-    android:textColor="#555555" />
-
-<!-- Footer: Settings and Help -->
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:gravity="center"
-    android:paddingTop="24dp">
-
-    <!-- Settings Button -->
-    <Button
-        android:id="@+id/btnSettings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/settings"
+        android:text="Recent Activity:"
         android:textSize="16sp"
         android:textColor="#000000"
-        android:layout_marginEnd="16dp" />
+        app:layout_constraintTop_toBottomOf="@+id/addMushroomDetailsLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp" />
 
-    <!-- Help Button -->
-    <Button
-        android:id="@+id/btnHelp"
+    <TextView
+        android:id="@+id/recentTripInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/help"
+        android:text="Trip Name - Date"
         android:textSize="16sp"
-        android:textColor="#000000" />
-</LinearLayout>
+        android:textColor="#555555"
+        app:layout_constraintTop_toBottomOf="@+id/recentActivityLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="8dp" />
 
-</LinearLayout>
+    <!-- Footer: Settings and Help -->
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp">
+
+        <!-- Settings Button -->
+        <TextView
+            android:id="@+id/settingsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Settings"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_marginEnd="16dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <!-- Help Button -->
+        <TextView
+            android:id="@+id/helpButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Help"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:clickable="true"
+            android:focusable="true" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,4 +10,5 @@
     <string name="trip_name_date">Trip Name - Date</string>
     <string name="recent_activity">Recent Activity:</string>
     <string name="help">❓ Help</string>
+    <string name="enter_trip_description">Enter trip desciption</string>
 </resources>
