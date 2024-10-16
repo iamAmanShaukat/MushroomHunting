@@ -142,25 +142,37 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp" />
 
-    <!-- Additional Field: Mushroom Species Expected -->
+    <!-- Add mushroom -->
     <TextView
         android:id="@+id/mushroom_species_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Mushroom species expected"
+        android:text="Add mushroom"
         app:layout_constraintTop_toBottomOf="@id/description_input"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="16dp" />
 
-    <EditText
-        android:id="@+id/mushroom_species_input"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Enter mushroom species"
+<!--    <EditText-->
+<!--        android:id="@+id/mushroom_species_input"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Enter mushroom species"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/mushroom_species_label"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:layout_marginEnd="16dp" />-->
+    <Button
+        android:id="@+id/addMushroomButton"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Add mushroom"
+        android:clickable="true"
         app:layout_constraintTop_toBottomOf="@id/mushroom_species_label"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:cornerRadius="0dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>

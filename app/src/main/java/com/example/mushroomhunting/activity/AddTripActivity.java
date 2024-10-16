@@ -1,8 +1,10 @@
 package com.example.mushroomhunting.activity;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TimePicker;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,7 +14,8 @@ import java.util.Locale;
 
 public class AddTripActivity extends AppCompatActivity {
 
-    private EditText nameInput, dateInput, timeInput, locationInput, durationInput, descriptionInput, speciesInput;
+    private EditText nameInput, dateInput, timeInput, locationInput, durationInput, descriptionInput;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,13 +28,23 @@ public class AddTripActivity extends AppCompatActivity {
         locationInput = findViewById(R.id.location_input);
         durationInput = findViewById(R.id.duration_input);
         descriptionInput = findViewById(R.id.description_input);
-        speciesInput = findViewById(R.id.mushroom_species_input);
+        Button addMushroomDetailsButton = (Button)findViewById(R.id.addMushroomButton);
 
         // Set onClickListener for name input
         dateInput.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String tripName = nameInput.getText().toString();
+            }
+        });
+
+        // set onClickListener for addMushroom button
+        addMushroomDetailsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Open the Add Mushroom Details Activity
+                Intent intent = new Intent(AddTripActivity.this, AddMushroomDetailsActivity.class);
+                startActivity(intent);
             }
         });
 
