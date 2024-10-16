@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.fragment.app.FragmentManager;
 
 import com.example.mushroomhunting.R;
 
@@ -22,6 +23,12 @@ public class MainActivity extends AppCompatActivity {
         ConstraintLayout addMushroomDetailsLayout = findViewById(R.id.addMushroomDetailsLayout);
         TextView settingsButton = findViewById(R.id.settingsButton);
         TextView helpButton = findViewById(R.id.helpButton);
+
+        // Set up the Recent Activity Fragment
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.recentFragmentContainer, new RecentActivityFragment())
+                .commit();
 
         // Set onClick listeners for each layout
         addTripLayout.setOnClickListener(new View.OnClickListener() {

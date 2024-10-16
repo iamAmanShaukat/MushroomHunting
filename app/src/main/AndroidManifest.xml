@@ -41,6 +41,9 @@
         <!-- Help Activity Declaration -->
         <activity android:name=".activity.HelpActivity" />
 
+        <!-- Trip Detail Activity Declaration -->
+        <activity android:name=".activity.TripDetailActivity" />
+
     </application>
 
 </manifest>
