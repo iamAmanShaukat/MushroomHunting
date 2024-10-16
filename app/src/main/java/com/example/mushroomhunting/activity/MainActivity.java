@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Initialize layout containers instead of buttons
+        // Initialize layout containers
         ConstraintLayout addTripLayout = findViewById(R.id.addTripLayout);
         ConstraintLayout viewTripsLayout = findViewById(R.id.viewTripsLayout);
         ConstraintLayout addMushroomDetailsLayout = findViewById(R.id.addMushroomDetailsLayout);
