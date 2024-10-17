@@ -104,7 +104,7 @@
         android:id="@+id/duration_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Duration"
+        android:text="Duration (in days)"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/location_input"
         app:layout_constraintStart_toStartOf="parent"
@@ -115,6 +115,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="Enter trip duration"
+        android:inputType="number"
         app:layout_constraintTop_toBottomOf="@id/duration_label"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -175,4 +176,18 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/saveTripButton"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="16dp"
+        android:clickable="true"
+        android:text="Save trip"
+        app:cornerRadius="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addMushroomButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
