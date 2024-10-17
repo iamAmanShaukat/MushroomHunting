@@ -10,6 +10,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mushroomhunting.R;
+import com.example.mushroomhunting.dto.MushroomDto;
+import com.example.mushroomhunting.validate.Validation;
 
 public class AddMushroomDetailsActivity extends AppCompatActivity {
 
@@ -41,47 +43,28 @@ public class AddMushroomDetailsActivity extends AppCompatActivity {
     }
 
     private void saveMushroomDetails() {
-        // Get the input values
-        String mushroomType = mushroomTypeInput.getText().toString().trim();
-        String mushroomLocation = mushroomLocationInput.getText().toString().trim();
-        String mushroomQuantity = mushroomQuantityInput.getText().toString().trim();
-        String additionalComments = additionalCommentsInput.getText().toString().trim();
+        MushroomDto mushroomDto = new MushroomDto();
+
+        mushroomDto.setMushroomType(mushroomTypeInput.getText().toString().trim());
+        mushroomDto.setMushroomLocation(mushroomLocationInput.getText().toString().trim());
+        mushroomDto.setMushroomQuantity(mushroomQuantityInput.getText().toString().trim());
+        mushroomDto.setComments(additionalCommentsInput.getText().toString().trim());
 
         // Validate required fields
-        if (TextUtils.isEmpty(mushroomType)) {
-            Toast.makeText(this, "Please enter the type of mushroom", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        if (TextUtils.isEmpty(mushroomLocation)) {
-            Toast.makeText(this, "Please enter the location where mushrooms were found", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        if (TextUtils.isEmpty(mushroomQuantity)) {
-            Toast.makeText(this, "Please enter the quantity of mushrooms found", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        // Convert quantity to integer
-        int quantity;
-        try {
-            quantity = Integer.parseInt(mushroomQuantity);
-        } catch (NumberFormatException e) {
-            Toast.makeText(this, "Please enter a valid number for the quantity", Toast.LENGTH_SHORT).show();
+        Validation validation = new Validation();
+        String toastMessage = validation.validateMushroomDetails(mushroomDto);
+        if(!TextUtils.isEmpty(toastMessage)){
+            Toast.makeText(this, toastMessage, Toast.LENGTH_SHORT).show();
             return;
         }
 
         // Show the confirmation dialog
-        showConfirmationDialog(mushroomType, mushroomLocation, quantity, additionalComments);
+        showConfirmationDialog(mushroomDto);
     }
 
-    private void showConfirmationDialog(String mushroomType, String mushroomLocation, int mushroomQuantity, String additionalComments) {
+    private void showConfirmationDialog(MushroomDto mushroomDto) {
         // Prepare the dialog message
-        String message = "Mushroom Type: " + mushroomType +
-                "\nLocation: " + mushroomLocation +
-                "\nQuantity: " + mushroomQuantity +
-                "\nAdditional Comments: " + (TextUtils.isEmpty(additionalComments) ? "None" : additionalComments);
+        String message = mushroomDto.toString();
 
         // Create the dialog
         new AlertDialog.Builder(this)
