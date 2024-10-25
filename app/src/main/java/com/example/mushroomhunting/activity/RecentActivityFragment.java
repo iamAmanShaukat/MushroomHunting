@@ -12,7 +12,6 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
 import com.example.mushroomhunting.R;
-import com.example.mushroomhunting.activity.TripDetailActivity;
 
 public class RecentActivityFragment extends Fragment {
 
@@ -56,7 +55,7 @@ public class RecentActivityFragment extends Fragment {
 
     // Method to open the TripDetailActivity and pass data
     private void openTripDetail(String tripName, String tripDetails) {
-        Intent intent = new Intent(getActivity(), TripDetailActivity.class);
+        Intent intent = new Intent(getActivity(), TripDetailsActivity.class);
         intent.putExtra("trip_name", tripName);
         intent.putExtra("trip_details", tripDetails);
         startActivity(intent);
