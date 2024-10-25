@@ -13,11 +13,11 @@ import com.example.mushroomhunting.util.MushroomHunting;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DatabaseOperation {
+public class DatabaseManager {
 
     private DatabaseHelper dbHelper;
 
-    public DatabaseOperation() {
+    public DatabaseManager() {
         dbHelper = new DatabaseHelper(MushroomHunting.getAppContext());
     }
 

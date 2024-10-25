@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.mushroomhunting.R;
-import com.example.mushroomhunting.db.DatabaseOperation;
+import com.example.mushroomhunting.db.DatabaseManager;
 import com.example.mushroomhunting.dto.TripDto;
 import com.example.mushroomhunting.validate.Validation;
 
@@ -101,7 +101,7 @@ public class AddTripActivity extends AppCompatActivity {
 
     private void showConfirmationDialog(TripDto tripDto) {
 
-        DatabaseOperation repository = new DatabaseOperation();
+        DatabaseManager repository = new DatabaseManager();
         // Prepare the dialog message
         String message = tripDto.toString();
 
