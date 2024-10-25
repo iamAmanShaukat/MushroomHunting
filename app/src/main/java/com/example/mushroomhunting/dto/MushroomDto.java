@@ -10,6 +10,25 @@ public class MushroomDto {
     String mushroomLocation;
     String mushroomQuantity;
     String comments;
+    String mushroomId;
+    String tripId;
+
+
+    public String getTripId() {
+        return tripId;
+    }
+
+    public void setTripId(String tripId) {
+        this.tripId = tripId;
+    }
+
+    public String getMushroomId() {
+        return mushroomId;
+    }
+
+    public void setMushroomId(String mushroomId) {
+        this.mushroomId = mushroomId;
+    }
     public String getMushroomType() {
         return mushroomType;
     }
