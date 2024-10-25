@@ -6,7 +6,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,13 +14,12 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.mushroomhunting.R;
-import com.example.mushroomhunting.db.TripMushroomRepository;
+import com.example.mushroomhunting.db.DatabaseOperation;
 import com.example.mushroomhunting.dto.TripDto;
 import com.example.mushroomhunting.validate.Validation;
 
 import java.util.Calendar;
 import java.util.Locale;
-import java.util.UUID;
 
 public class AddTripActivity extends AppCompatActivity {
 
@@ -103,7 +101,7 @@ public class AddTripActivity extends AppCompatActivity {
 
     private void showConfirmationDialog(TripDto tripDto) {
 
-        TripMushroomRepository repository = new TripMushroomRepository();
+        DatabaseOperation repository = new DatabaseOperation();
         // Prepare the dialog message
         String message = tripDto.toString();
 

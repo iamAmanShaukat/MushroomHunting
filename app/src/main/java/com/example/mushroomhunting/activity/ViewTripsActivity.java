@@ -8,7 +8,7 @@
     import androidx.recyclerview.widget.RecyclerView;
     import com.example.mushroomhunting.R;
     import com.example.mushroomhunting.adapter.TripAdapter;
-    import com.example.mushroomhunting.db.TripMushroomRepository;
+    import com.example.mushroomhunting.db.DatabaseOperation;
     import com.example.mushroomhunting.dto.TripDto;
     import com.example.mushroomhunting.util.TripDiffCallback;
 
@@ -21,7 +21,7 @@
         private TripAdapter tripAdapter;
         private List<TripDto> tripList;  // Original list of trips
         private List<TripDto> filteredTrips;  // List for filtered trips
-        TripMushroomRepository repository = new TripMushroomRepository();
+        DatabaseOperation repository = new DatabaseOperation();
 
 
         @Override
