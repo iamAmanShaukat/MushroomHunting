@@ -5,7 +5,7 @@ import android.util.Log;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.mushroomhunting.R;
-import com.example.mushroomhunting.db.TripMushroomRepository;
+import com.example.mushroomhunting.db.DatabaseOperation;
 import com.example.mushroomhunting.dto.TripDto;
 
 public class TripDetailsActivity extends AppCompatActivity {
@@ -18,7 +18,7 @@ public class TripDetailsActivity extends AppCompatActivity {
         // Get the trip details from the intent
         String tripId = getIntent().getStringExtra("tripId");
 
-        TripMushroomRepository repository = new TripMushroomRepository();
+        DatabaseOperation repository = new DatabaseOperation();
         TripDto tripDto = repository.getTripDetails(tripId);
         Log.i("TripDetails", tripId);
 
