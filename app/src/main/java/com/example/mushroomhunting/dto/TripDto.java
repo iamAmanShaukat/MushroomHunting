@@ -4,6 +4,9 @@ import android.text.TextUtils;
 
 import androidx.annotation.NonNull;
 
+import java.util.List;
+import java.util.UUID;
+
 public class TripDto {
 
     String tripName;
@@ -12,7 +15,8 @@ public class TripDto {
     String tripLocation;
     String tripDuration;
     String tripDescription;
-
+    String tripId = UUID.randomUUID().toString();
+    List<MushroomDto> mushroomList;
 
     public String getTripName() {
         return tripName;
@@ -60,6 +64,22 @@ public class TripDto {
 
     public void setTripDescription(String tripDescription) {
         this.tripDescription = tripDescription;
+    }
+
+    public String getTripId() {
+        return tripId;
+    }
+
+    public void setTripId(String tripId) {
+        this.tripId = tripId;
+    }
+
+    public List<MushroomDto> getMushroomList() {
+        return mushroomList;
+    }
+
+    public void setMushroomList(List<MushroomDto> mushroomList) {
+        this.mushroomList = mushroomList;
     }
 
     @NonNull
