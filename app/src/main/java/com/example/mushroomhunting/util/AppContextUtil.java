@@ -3,8 +3,8 @@ package com.example.mushroomhunting.util;
 import android.app.Application;
 import android.content.Context;
 
-public class MushroomHunting extends Application {
-    private static MushroomHunting instance;
+public class AppContextUtil extends Application {
+    private static AppContextUtil instance;
 
     @Override
     public void onCreate() {
