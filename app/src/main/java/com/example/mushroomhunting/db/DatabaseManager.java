@@ -8,7 +8,7 @@ import android.util.Log;
 import com.example.mushroomhunting.constant.AppConstants;
 import com.example.mushroomhunting.dto.MushroomDto;
 import com.example.mushroomhunting.dto.TripDto;
-import com.example.mushroomhunting.util.MushroomHunting;
+import com.example.mushroomhunting.util.AppContextUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +18,7 @@ public class DatabaseManager {
     private DatabaseHelper dbHelper;
 
     public DatabaseManager() {
-        dbHelper = new DatabaseHelper(MushroomHunting.getAppContext());
+        dbHelper = new DatabaseHelper(AppContextUtil.getAppContext());
     }
 
     // Method to save a Trip
