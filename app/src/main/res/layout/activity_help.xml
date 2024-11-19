@@ -6,6 +6,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_image"
     tools:context=".activity.HelpActivity">
 
     <TextView
@@ -14,10 +15,12 @@
         android:layout_height="wrap_content"
         android:text="@string/help"
         android:textSize="18sp"
+        android:fontFamily="@font/mushroom_font"
+        android:textColor="#4B0082"
+        android:padding="16dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

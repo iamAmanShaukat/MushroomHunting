@@ -1,0 +1,8 @@
+<resources>
+    <string-array name="trip_array">
+        <item>Trip 1</item>
+        <item>Trip 2</item>
+        <item>Trip 3</item>
+        <!-- Add more trips -->
+    </string-array>
+</resources>
