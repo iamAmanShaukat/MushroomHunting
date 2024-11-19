@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         viewTripsLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Open the View Trips Activity
+                // Opens the View Trips Activity
                 Intent intent = new Intent(MainActivity.this, ViewTripsActivity.class);
                 startActivity(intent);
             }
