@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background Image Layer -->
+    <item>
+        <bitmap
+            android:src="@drawable/background_image"
+            android:gravity="fill"
+            android:tileMode="disabled"/>
+    </item>
+
+    <!-- Gradient Overlay Layer -->
+    <item>
+        <shape android:shape="rectangle">
+            <!-- Gradient Background -->
+            <gradient
+                android:type="linear"
+                android:angle="45"
+                android:startColor="#80000000"
+                android:centerColor="#60000000"
+                android:endColor="#40000000" />
+
+            <!-- Rounded Corners -->
+            <corners android:radius="12dp" />
+
+            <!-- Border -->
+            <stroke
+                android:width="2dp"
+                android:color="#FFFFFF" />
+
+            <!-- Add Padding -->
+            <padding
+                android:left="16dp"
+                android:top="16dp"
+                android:right="16dp"
+                android:bottom="16dp" />
+        </shape>
+    </item>
+</layer-list>

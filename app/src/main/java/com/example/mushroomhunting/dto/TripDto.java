@@ -1,22 +1,23 @@
 package com.example.mushroomhunting.dto;
 
-import android.text.TextUtils;
-
-import androidx.annotation.NonNull;
-
-import java.util.List;
-import java.util.UUID;
-
 public class TripDto {
+    private String tripId;
+    private String tripName;
+    private String tripDate;
+    private String tripTime;
+    private String tripLocation;
+    private String tripDuration;
+    private String tripDescription;
+    private boolean selected; // New property to track selection state
 
-    String tripName;
-    String tripDate;
-    String tripTime;
-    String tripLocation;
-    String tripDuration;
-    String tripDescription;
-    String tripId = UUID.randomUUID().toString();
-    List<MushroomDto> mushroomList;
+    // Getters and Setters
+    public String getTripId() {
+        return tripId;
+    }
+
+    public void setTripId(String tripId) {
+        this.tripId = tripId;
+    }
 
     public String getTripName() {
         return tripName;
@@ -66,30 +67,11 @@ public class TripDto {
         this.tripDescription = tripDescription;
     }
 
-    public String getTripId() {
-        return tripId;
+    public boolean isSelected() { // Getter for the selected property
+        return selected;
     }
 
-    public void setTripId(String tripId) {
-        this.tripId = tripId;
-    }
-
-    public List<MushroomDto> getMushroomList() {
-        return mushroomList;
-    }
-
-    public void setMushroomList(List<MushroomDto> mushroomList) {
-        this.mushroomList = mushroomList;
-    }
-
-    @NonNull
-    @Override
-    public String toString(){
-        return "Name: " + tripName +
-                "\nDate: " + tripDate +
-                "\nTime: " + tripTime +
-                "\nLocation: " + tripLocation +
-                "\nDuration: " + tripDuration +
-                "\nDescription: " + (TextUtils.isEmpty(tripDescription) ? "None" : tripDescription);
+    public void setSelected(boolean selected) { // Setter for the selected property
+        this.selected = selected;
     }
 }

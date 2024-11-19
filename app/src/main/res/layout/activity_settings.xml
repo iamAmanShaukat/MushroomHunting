@@ -6,6 +6,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_image"
     tools:context=".activity.SettingsActivity">
 
     <TextView
@@ -14,6 +15,13 @@
         android:layout_height="wrap_content"
         android:text="Settings"
         android:textSize="18sp"
+        android:fontFamily="@font/mushroom_font"
+        android:textColor="#4B0082"
+        android:padding="16dp"
+        android:shadowColor="#000000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="16dp"

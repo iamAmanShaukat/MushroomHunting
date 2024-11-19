@@ -37,7 +37,6 @@ public class AddTripActivity extends AppCompatActivity {
         locationInput = findViewById(R.id.location_input);
         durationInput = findViewById(R.id.duration_input);
         descriptionInput = findViewById(R.id.description_input);
-        Button addMushroomDetailsButton = (Button)findViewById(R.id.addMushroomButton);
         Button saveTripDetailsButton = (Button)findViewById(R.id.saveTripButton);
 
 
@@ -58,15 +57,6 @@ public class AddTripActivity extends AppCompatActivity {
             }
         });
 
-        // set onClickListener for addMushroom button
-        addMushroomDetailsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Open the Add Mushroom Details Activity
-                Intent intent = new Intent(AddTripActivity.this, AddMushroomDetailsActivity.class);
-                startActivity(intent);
-            }
-        });
 
         // Set onClickListener for the save button
         saveTripDetailsButton.setOnClickListener(new View.OnClickListener() {

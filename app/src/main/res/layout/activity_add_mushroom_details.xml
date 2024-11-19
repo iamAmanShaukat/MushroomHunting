@@ -8,129 +8,230 @@
     android:layout_height="match_parent"
     tools:context=".activity.AddMushroomDetailsActivity">
 
-    <!-- Mushroom Type -->
-    <TextView
-        android:id="@+id/mushroom_type_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mushroom type"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    <!-- Background Image -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background_image"
+        android:alpha="0.3"/>
 
-    <EditText
-        android:id="@+id/mushroom_type_input"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Enter mushroom type"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintTop_toBottomOf="@id/mushroom_type_label"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp" />
+    <!-- Content Container with Semi-transparent Background -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <!-- Location -->
-    <TextView
-        android:id="@+id/mushroom_location_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mushroom location"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/mushroom_type_input"
-        app:layout_constraintStart_toStartOf="parent" />
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="#80FFFFFF">
 
-    <EditText
-        android:id="@+id/mushroom_location_input"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Enter location"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@id/mushroom_location_label"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
 
+                <!-- Trip Selection -->
+                <TextView
+                    android:id="@+id/select_trip_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_trip"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/mushroom_font"
+                    android:text="Select Trip"
+                    android:textColor="@color/primary_color"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/curr_location_btn"
-        android:layout_width="183dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="8dp"
-        android:clickable="true"
-        android:text="Use current location"
-        app:cornerRadius="0dp"
-        app:layout_constraintEnd_toEndOf="@+id/mushroom_location_input"
-        app:layout_constraintHorizontal_bias="0.918"
-        app:layout_constraintStart_toStartOf="@+id/mushroom_location_input"
-        app:layout_constraintTop_toBottomOf="@id/mushroom_location_label" />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp">
+
+                    <Spinner
+                        android:id="@+id/trip_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:drawable/btn_dropdown"
+                        android:padding="16dp"
+                        android:spinnerMode="dropdown" />
+                </com.google.android.material.textfield.TextInputLayout>
 
 
-    <!-- Quantity -->
-    <TextView
-        android:id="@+id/mushroom_quantity_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mushroom quantity"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/mushroom_location_input"
-        app:layout_constraintStart_toStartOf="parent" />
+                <!-- Mushroom Type -->
+                <TextView
+                    android:id="@+id/mushroom_type_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_mushroom"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/mushroom_font"
+                    android:text="Mushroom Type"
+                    android:textColor="@color/primary_color"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/mushroom_quantity_input"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:hint="Enter quantity"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@id/mushroom_quantity_label"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusTopStart="12dp">
 
-    <!-- Additional Comments -->
-    <TextView
-        android:id="@+id/additional_comments_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Comments"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/mushroom_quantity_input"
-        app:layout_constraintStart_toStartOf="parent" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/mushroom_type_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/mushroom_font"
+                        android:hint="Enter mushroom type" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/additional_comments_input"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Enter additional comments"
-        android:inputType="textMultiLine"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@id/additional_comments_label"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+                <!-- Location -->
+                <TextView
+                    android:id="@+id/mushroom_location_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:drawableStart="@drawable/ic_location"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/mushroom_font"
+                    android:text="Location"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
-    <!-- Submit Button -->
-    <Button
-        android:id="@+id/save_mushroom_details"
-        android:layout_width="371dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="Save"
-        app:cornerRadius="0dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/additional_comments_input" />
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusTopStart="12dp">
 
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/mushroom_location_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/mushroom_font"
+                        android:hint="Enter location" />
+                </com.google.android.material.textfield.TextInputLayout>
 
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/curr_location_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/mushroom_font"
+                    android:text="Use current location"
+                    app:cornerRadius="12dp"
+                    app:icon="@drawable/ic_location"
+                    app:iconTint="@color/white" />
+
+                <!-- Quantity -->
+                <TextView
+                    android:id="@+id/mushroom_quantity_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:drawableStart="@drawable/ic_quantity"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/mushroom_font"
+                    android:text="Quantity"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusTopStart="12dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/mushroom_quantity_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/mushroom_font"
+                        android:hint="Enter quantity"
+                        android:inputType="number" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Comments -->
+                <TextView
+                    android:id="@+id/additional_comments_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:drawableStart="@drawable/ic_comment"
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/mushroom_font"
+                    android:text="Comments"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusTopStart="12dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/additional_comments_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/mushroom_font"
+                        android:gravity="top"
+                        android:hint="Enter additional comments"
+                        android:inputType="textMultiLine"
+                        android:minLines="3" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Submit Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/save_mushroom_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/mushroom_font"
+                    android:padding="12dp"
+                    android:text="Save Details"
+                    android:textSize="16sp"
+                    app:cornerRadius="12dp"
+                    app:icon="@drawable/ic_save"
+                    app:iconGravity="textStart" />
+
+                <!-- View Mushroom Details Button -->
+                <Button
+                    android:id="@+id/view_mushroom_details"
+                    android:fontFamily="@font/mushroom_font"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="View Mushroom Details"
+                    app:layout_constraintTop_toBottomOf="@id/save_mushroom_details"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
