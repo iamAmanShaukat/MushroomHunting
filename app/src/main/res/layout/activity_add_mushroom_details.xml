@@ -201,7 +201,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/mushroom_font"
                         android:gravity="top"
-                        android:hint="Enter additional comments"
+                        android:hint="Enter additional comments (250 char)"
                         android:inputType="textMultiLine"
                         android:minLines="3" />
                 </com.google.android.material.textfield.TextInputLayout>
