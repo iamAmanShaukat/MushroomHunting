@@ -55,6 +55,7 @@ public class SettingsActivity extends AppCompatActivity {
         List<TripDto> allTrips = databaseManager.getAllTrips();
         cloudHelper.publishToFirebase(allTrips);
 
+
     }
 
     private void openDeleteAccountActivity() {
