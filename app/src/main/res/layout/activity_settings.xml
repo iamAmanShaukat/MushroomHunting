@@ -30,6 +30,16 @@
         android:drawableStart="@drawable/privacy_icon"
         android:drawablePadding="3dp"
         android:focusable="true" />
+        android:textColor="#4B0082"
+        android:padding="16dp"
+        android:shadowColor="#000000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp" />
 
     <TextView
         android:id="@+id/textViewSync"

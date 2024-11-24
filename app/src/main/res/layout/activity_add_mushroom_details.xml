@@ -42,7 +42,6 @@
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/ic_trip"
                     android:drawablePadding="8dp"
-                    android:fontFamily="@font/mushroom_font"
                     android:text="Select Trip"
                     android:textColor="@color/primary_color"
                     android:textSize="16sp"
@@ -62,7 +61,6 @@
                         android:spinnerMode="dropdown" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-
                 <!-- Mushroom Type -->
                 <TextView
                     android:id="@+id/mushroom_type_label"
@@ -70,7 +68,6 @@
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/ic_mushroom"
                     android:drawablePadding="8dp"
-                    android:fontFamily="@font/mushroom_font"
                     android:text="Mushroom Type"
                     android:textColor="@color/primary_color"
                     android:textSize="16sp"
@@ -90,7 +87,6 @@
                         android:id="@+id/mushroom_type_input"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/mushroom_font"
                         android:hint="Enter mushroom type" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -102,7 +98,6 @@
                     android:layout_marginTop="16dp"
                     android:drawableStart="@drawable/ic_location"
                     android:drawablePadding="8dp"
-                    android:fontFamily="@font/mushroom_font"
                     android:text="Location"
                     android:textColor="@color/text_primary"
                     android:textSize="16sp"
@@ -122,7 +117,6 @@
                         android:id="@+id/mushroom_location_input"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/mushroom_font"
                         android:hint="Enter location" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -132,7 +126,6 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
                     android:layout_marginTop="8dp"
-                    android:fontFamily="@font/mushroom_font"
                     android:text="Use current location"
                     app:cornerRadius="12dp"
                     app:icon="@drawable/ic_location"
@@ -146,7 +139,6 @@
                     android:layout_marginTop="16dp"
                     android:drawableStart="@drawable/ic_quantity"
                     android:drawablePadding="8dp"
-                    android:fontFamily="@font/mushroom_font"
                     android:text="Quantity"
                     android:textColor="@color/text_primary"
                     android:textSize="16sp"
@@ -166,7 +158,6 @@
                         android:id="@+id/mushroom_quantity_input"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/mushroom_font"
                         android:hint="Enter quantity"
                         android:inputType="number" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -179,7 +170,6 @@
                     android:layout_marginTop="16dp"
                     android:drawableStart="@drawable/ic_comment"
                     android:drawablePadding="8dp"
-                    android:fontFamily="@font/mushroom_font"
                     android:text="Comments"
                     android:textColor="@color/text_primary"
                     android:textSize="16sp"
@@ -199,7 +189,6 @@
                         android:id="@+id/additional_comments_input"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/mushroom_font"
                         android:gravity="top"
                         android:hint="Enter additional comments (250 char)"
                         android:inputType="textMultiLine"
@@ -212,25 +201,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
-                    android:fontFamily="@font/mushroom_font"
                     android:padding="12dp"
                     android:text="Save Details"
                     android:textSize="16sp"
                     app:cornerRadius="12dp"
                     app:icon="@drawable/ic_save"
                     app:iconGravity="textStart" />
-
-                <!-- View Mushroom Details Button -->
-                <Button
-                    android:id="@+id/view_mushroom_details"
-                    android:fontFamily="@font/mushroom_font"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="View Mushroom Details"
-                    app:layout_constraintTop_toBottomOf="@id/save_mushroom_details"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent" />
-
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </ScrollView>

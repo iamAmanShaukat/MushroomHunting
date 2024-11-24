@@ -26,11 +26,12 @@ public class TripAdapter extends RecyclerView.Adapter<TripAdapter.TripViewHolder
 
     private final List<TripDto> tripList;
     private final Context context;
-    private boolean isSelectAllChecked = false;
+    private final Runnable onSelectionChange; // Callback for selection change
 
-    public TripAdapter(Context context, List<TripDto> tripList) {
+    public TripAdapter(Context context, List<TripDto> tripList, Runnable onSelectionChange) {
         this.context = context;
         this.tripList = tripList;
+        this.onSelectionChange = onSelectionChange;
     }
 
     @NonNull
@@ -69,7 +70,10 @@ public class TripAdapter extends RecyclerView.Adapter<TripAdapter.TripViewHolder
         // Individual checkbox state
         holder.individualCheckbox.setOnCheckedChangeListener(null); // Reset listener
         holder.individualCheckbox.setChecked(trip.isSelected());
-        holder.individualCheckbox.setOnCheckedChangeListener((buttonView, isChecked) -> trip.setSelected(isChecked));
+        holder.individualCheckbox.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            trip.setSelected(isChecked);
+            onSelectionChange.run(); // Notify activity about selection change
+        });
     }
 
     @Override
@@ -77,8 +81,8 @@ public class TripAdapter extends RecyclerView.Adapter<TripAdapter.TripViewHolder
         return tripList.size();
     }
 
+    // Select or deselect all trips
     public void selectAllTrips(boolean isChecked) {
-        isSelectAllChecked = isChecked;
         for (TripDto trip : tripList) {
             trip.setSelected(isChecked);
         }
