@@ -1,26 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_image"
-    tools:context=".activity.HelpActivity">
+    android:orientation="vertical"
+    android:padding="16dp">
 
     <TextView
-        android:id="@+id/help_title"
-        android:layout_width="wrap_content"
+        android:id="@+id/helpQuestion1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/help"
+        android:text="What is mushroom hunting?"
         android:textSize="18sp"
-        android:fontFamily="@font/mushroom_font"
-        android:textColor="#4B0082"
-        android:padding="16dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp" />
+        android:padding="8dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/helpAnswer1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mushroom hunting is the activity of searching for edible mushrooms in the wild."
+        android:textSize="16sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/helpQuestion2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="How can I identify poisonous mushrooms?"
+        android:textSize="18sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/helpAnswer2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="We recommend you consult a professional mycologist before eating wild mushrooms."
+        android:textSize="16sp"
+        android:padding="8dp" />
+
+
+    <TextView
+        android:id="@+id/helpQuestion3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="How can i add a new trip?"
+        android:textSize="18sp"
+        android:padding="8dp" />
+
+
+    <TextView
+        android:id="@+id/helpQuestion4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="How can i delete my recent trip?"
+        android:textSize="18sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/helpQuestion5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Can't find what you're looking for?"
+        android:textSize="18sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/helpAnswer5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Contact our customer service 01-234-567."
+        android:textSize="16sp"
+        android:padding="8dp" />
+
+    <!-- Add more questions and answers as needed -->
+
+</LinearLayout>

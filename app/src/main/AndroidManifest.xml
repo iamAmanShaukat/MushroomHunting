@@ -50,6 +50,20 @@
         <!-- Trip Details Activity Declaration -->
         <activity android:name=".activity.TripDetailsActivity" />
 
+        <!-- Delete Activity Declaration -->
+        <activity android:name=".activity.DeleteActivity" />
+
+        <!-- Privacy Activity Declaration -->
+        <activity android:name=".activity.PrivacyActivity" />
+
+        <!-- Sync Activity Declaration -->
+        <activity android:name=".activity.SyncActivity" />
+
+
+
+
+
+
         <activity android:name=".activity.EditTripActivity" />
 
         <activity android:name=".activity.ViewMushroomDetailsActivity" />

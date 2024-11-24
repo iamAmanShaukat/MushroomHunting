@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "972329225343",
+    "project_id": "mushroom-hunting-tracker",
+    "storage_bucket": "mushroom-hunting-tracker.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:972329225343:android:54701843936d06570f034a",
+        "android_client_info": {
+          "package_name": "com.example.mushroomhunting"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0Nu84R70JFxSO2PDEFLUCoOA-0QtaurA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -17,6 +17,7 @@ import com.example.mushroomhunting.R;
 import com.example.mushroomhunting.db.DatabaseManager;
 import com.example.mushroomhunting.dto.TripDto;
 import com.example.mushroomhunting.validate.Validation;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Calendar;
 import java.util.Locale;
