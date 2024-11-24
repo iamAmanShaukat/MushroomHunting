@@ -10,8 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
-import android.content.Intent;
-
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -38,7 +36,7 @@ public class AddMushroomDetailsActivity extends AppCompatActivity {
 
     private Spinner tripSpinner;
     private EditText mushroomTypeInput, mushroomLocationInput, mushroomQuantityInput, mushroomCommentsInput;
-    private Button saveMushroomDetailsButton, viewMushroomDetailsButton, currentLocationButton;
+    private Button saveMushroomDetailsButton, currentLocationButton;
     private DatabaseManager databaseManager;
     private FusedLocationProviderClient fusedLocationClient;
 
@@ -58,7 +56,6 @@ public class AddMushroomDetailsActivity extends AppCompatActivity {
         mushroomQuantityInput = findViewById(R.id.mushroom_quantity_input);
         mushroomCommentsInput = findViewById(R.id.additional_comments_input);
         saveMushroomDetailsButton = findViewById(R.id.save_mushroom_details);
-        viewMushroomDetailsButton = findViewById(R.id.view_mushroom_details);
         currentLocationButton = findViewById(R.id.curr_location_btn);
 
         // Load trips into Spinner
@@ -66,7 +63,6 @@ public class AddMushroomDetailsActivity extends AppCompatActivity {
 
         // Set up button listeners
         saveMushroomDetailsButton.setOnClickListener(v -> saveMushroomDetails());
-        viewMushroomDetailsButton.setOnClickListener(v -> navigateToViewMushroomDetails());
         currentLocationButton.setOnClickListener(v -> fetchCurrentLocation());
     }
 
@@ -186,20 +182,5 @@ public class AddMushroomDetailsActivity extends AppCompatActivity {
         mushroomQuantityInput.setText("");
         mushroomCommentsInput.setText("");
         tripSpinner.setSelection(0);
-    }
-
-    private void navigateToViewMushroomDetails() {
-        int selectedPosition = tripSpinner.getSelectedItemPosition();
-        if (selectedPosition == Spinner.INVALID_POSITION) {
-            Toast.makeText(this, "Please select a trip first.", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        List<TripDto> tripsList = databaseManager.getAllTrips();
-        TripDto selectedTrip = tripsList.get(selectedPosition);
-
-        Intent intent = new Intent(AddMushroomDetailsActivity.this, ViewMushroomDetailsActivity.class);
-        intent.putExtra("tripId", selectedTrip.getTripId());
-        startActivity(intent);
     }
 }
