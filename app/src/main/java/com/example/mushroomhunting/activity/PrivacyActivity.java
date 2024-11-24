@@ -64,7 +64,6 @@ public class PrivacyActivity extends AppCompatActivity {
         editor.putBoolean("PhotoSharing", checkboxPhotoSharing.isChecked());
         editor.putBoolean("Notifications", checkboxNotifications.isChecked());
 
-        // Commit changes
         editor.apply();
 
         // Show a confirmation message
