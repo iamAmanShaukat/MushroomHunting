@@ -50,7 +50,6 @@ public class PrivacyActivity extends AppCompatActivity {
         boolean photoSharing = sharedPreferences.getBoolean("PhotoSharing", false);
         boolean notifications = sharedPreferences.getBoolean("Notifications", false);
 
-        // Set the checkboxes based on saved settings
         checkboxLocationSharing.setChecked(locationSharing);
         checkboxDataCollection.setChecked(dataCollection);
         checkboxPhotoSharing.setChecked(photoSharing);

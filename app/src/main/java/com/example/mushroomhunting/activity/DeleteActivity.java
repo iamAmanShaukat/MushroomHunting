@@ -29,7 +29,7 @@ public class DeleteActivity extends AppCompatActivity {
         new AlertDialog.Builder(this)
                 .setTitle("Confirm Deletion")
                 .setMessage("Are you sure you want to delete this item?")
-                .setCancelable(false) // Prevent dismissing by tapping outside the dialog
+                .setCancelable(false)
                 .setPositiveButton("Yes", (dialog, which) -> {
                     // Perform the deletion (e.g., delete from database, list, etc.)
                     deleteItem();
@@ -42,11 +42,7 @@ public class DeleteActivity extends AppCompatActivity {
     }
 
     private void deleteItem() {
-        // Your logic for deletion (e.g., remove item from a list or database)
-        // For now, we just show a Toast message
         Toast.makeText(DeleteActivity.this, "Item deleted successfully", Toast.LENGTH_SHORT).show();
 
-        // Optionally, you could return to the previous activity, or close the activity
-        // finish();  // If you want to close the current activity after deletion
     }
 }

@@ -14,7 +14,6 @@ public class HelpActivity extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_help); // Ensure this matches your XML layout file name
 
-            // Link the questions and answers
             TextView question1 = findViewById(R.id.helpQuestion1);
             TextView answer1 = findViewById(R.id.helpAnswer1);
             TextView question2 = findViewById(R.id.helpQuestion2);
@@ -56,13 +55,10 @@ public class HelpActivity extends AppCompatActivity {
                 }
             });
 
-            // You can add similar toggle logic for question3 and question4
             question3.setOnClickListener(v -> {
-                // Add your logic here for Question 3
             });
 
             question4.setOnClickListener(v -> {
-                // Add your logic here for Question 4
             });
         }
     }
