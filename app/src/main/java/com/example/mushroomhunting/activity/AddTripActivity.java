@@ -14,10 +14,11 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.mushroomhunting.R;
+import com.example.mushroomhunting.db.CacheHelper;
 import com.example.mushroomhunting.db.DatabaseManager;
 import com.example.mushroomhunting.dto.TripDto;
+import com.example.mushroomhunting.util.AppContextUtil;
 import com.example.mushroomhunting.validate.Validation;
-import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Calendar;
 import java.util.Locale;
@@ -106,6 +107,7 @@ public class AddTripActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         // Save the details and show a success message
                         repository.saveTrip(tripDto);
+                        CacheHelper.cacheTrip(AppContextUtil.getAppContext(),tripDto);
                         Toast.makeText(AddTripActivity.this, "Trip details saved successfully!", Toast.LENGTH_SHORT).show();
                         clearForm();
                     }

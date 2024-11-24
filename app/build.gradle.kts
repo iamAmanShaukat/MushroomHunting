@@ -44,6 +44,7 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-firestore")
     implementation("com.google.firebase:firebase-storage")
+    implementation ("com.google.code.gson:gson:2.10.1")
     implementation(libs.lombok)
     implementation(libs.play.services.location)
     implementation(libs.recyclerview)
