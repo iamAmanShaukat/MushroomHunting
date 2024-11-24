@@ -44,13 +44,11 @@ public class RecentActivityFragment extends Fragment {
         ConstraintLayout recentTrip2 = view.findViewById(R.id.recentTrip2);
 
         recentTrip1.setOnClickListener(v -> openTripDetail(
-                recentActivity1Name.getText().toString(),
-                recentActivity1Location.getText().toString()
+                "1"
         ));
 
         recentTrip2.setOnClickListener(v -> openTripDetail(
-                recentActivity2Name.getText().toString(),
-                recentActivity2Location.getText().toString()
+                "2"
         ));
 
         return view;
@@ -80,10 +78,20 @@ public class RecentActivityFragment extends Fragment {
         }
     }
 
-    private void openTripDetail(String tripName, String tripLocation) {
+    private void openTripDetail(String tripName) {
         Intent intent = new Intent(getActivity(), TripDetailsActivity.class);
-        intent.putExtra("trip_name", tripName);
-        intent.putExtra("trip_location", tripLocation);
+        String tripId;
+        List<TripDto> lastTwoTrips = CacheHelper.getLastTwoTrips(requireContext());
+        if (lastTwoTrips.size() > 0 && tripName.equals("1")) {
+            TripDto trip1 = lastTwoTrips.get(0);
+            tripId = trip1.getTripId();
+        } else if (lastTwoTrips.size() > 1 && tripName.equals("2")) {
+            TripDto trip2 = lastTwoTrips.get(1);
+            tripId = trip2.getTripId();
+        } else {
+            return;
+        }
+        intent.putExtra("tripId", tripId);
         startActivity(intent);
     }
 }
