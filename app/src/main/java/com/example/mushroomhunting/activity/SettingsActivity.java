@@ -2,8 +2,9 @@ package com.example.mushroomhunting.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mushroomhunting.R;
@@ -51,9 +52,9 @@ public class SettingsActivity extends AppCompatActivity {
 
     private void openSyncSettingsActivity() {
         // Navigate to SyncSettingsActivity (to be created)
-//        Intent intent = new Intent(SettingsActivity.this, SyncActivity.class);
         List<TripDto> allTrips = databaseManager.getAllTrips();
         cloudHelper.publishToFirebase(allTrips);
+        Toast.makeText(this, "Please select a trip first.", Toast.LENGTH_SHORT).show();
 
 
     }
