@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:padding="16dp">
+
+    <TextView
+    android:id="@+id/itemText"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="We hate to see you go!"
+    android:textSize="20sp"
+    android:layout_marginBottom="20dp"/>
+
+<!-- Delete Button -->
+    <Button
+    android:id="@+id/buttonDelete"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Delete Account"
+    android:textColor="@android:color/white"
+    android:background="@color/design_default_color_error"/>
+</LinearLayout>

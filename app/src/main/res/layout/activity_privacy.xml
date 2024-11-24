@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Title TextView -->
+    <TextView
+        android:id="@+id/privacy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Privacy Settings"
+        android:textSize="20sp"
+        android:paddingBottom="20dp" />
+
+    <!-- CheckBox for Location Sharing -->
+    <CheckBox
+        android:id="@+id/checkboxLocationSharing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enable Location Sharing" />
+
+    <!-- CheckBox for Data Collection -->
+    <CheckBox
+        android:id="@+id/checkboxDataCollection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Allow Data Collection for Analytics" />
+
+    <!-- CheckBox for Photo Sharing -->
+    <CheckBox
+        android:id="@+id/checkboxPhotoSharing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Share Photos of Mushrooms with Community" />
+
+    <!-- CheckBox for Notifications -->
+    <CheckBox
+        android:id="@+id/checkboxNotifications"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Receive Privacy Updates via Notifications" />
+
+    <!-- Save Button -->
+    <Button
+        android:id="@+id/buttonSaveSettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Settings"
+        android:layout_marginTop="20dp" />
+
+</LinearLayout>

@@ -18,24 +18,37 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- App Logo -->
-        <ImageView
-            android:id="@+id/appLogo"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:src="@drawable/mushroom_app_icon" />
+<!--         App Logo-->
+<!--        <ImageView-->
+<!--            android:id="@+id/appLogo"-->
+<!--            android:layout_width="60dp"-->
+<!--            android:layout_height="60dp"-->
+<!--            android:src="@drawable/mushroom_app_icon" />-->
 
-        <!-- App Title -->
-        <TextView
-            android:id="@+id/appTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Mushroom Hunting Tracker"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:layout_gravity="center"
-            android:layout_marginStart="16dp" />
+<!--         App Title-->
+<!--        <TextView-->
+<!--            android:id="@+id/appTitle"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Mushroom Hunting Tracker"-->
+<!--            android:textSize="24sp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textColor="#000000"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginStart="16dp" />-->
+
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorPrimary"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                android:elevation="4dp" />
+            <!-- Other layout content here -->
+
+
+
     </LinearLayout>
 
     <!-- Add New Trip Layout -->
@@ -183,7 +196,6 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/footer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -204,39 +216,36 @@
         />
 
     <!-- Footer: Settings and Help -->
-    <LinearLayout
-        android:id="@+id/footer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="24dp">
+<!--    <LinearLayout-->
+<!--        android:id="@+id/footer"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        android:layout_marginTop="24dp">-->
 
         <!-- Settings Button -->
-        <TextView
-            android:id="@+id/settingsButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Settings"
-            android:textSize="16sp"
-            android:textColor="#000000"
-            android:layout_marginEnd="16dp"
-            android:clickable="true"
-            android:focusable="true" />
+<!--        <TextView-->
+<!--            android:id="@+id/settingsTextview"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Settings"-->
+<!--            android:textSize="25sp"-->
+<!--            android:textColor="#000000"-->
+<!--            android:layout_marginEnd="16dp"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/addMushroomIcon"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            android:layout_marginStart="0dp"-->
+<!--            android:drawableStart="@drawable/settings_icon"-->
+<!--            android:drawablePadding="3dp"/>-->
 
-        <!-- Help Button -->
-        <TextView
-            android:id="@+id/helpButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Help"
-            android:textSize="16sp"
-            android:textColor="#000000"
-            android:clickable="true"
-            android:focusable="true" />
-    </LinearLayout>
+
+
+<!--    </LinearLayout>-->
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
