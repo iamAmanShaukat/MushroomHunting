@@ -5,7 +5,6 @@
 
     <!-- Add your custom styles if needed -->
     <style name="CustomTextStyle">
-        <item name="android:fontFamily">@font/mushroom_font</item>
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:shadowColor">#80000000</item>

@@ -15,7 +15,6 @@
         android:layout_height="wrap_content"
         android:text="Settings"
         android:textSize="18sp"
-        android:fontFamily="@font/mushroom_font"
         android:textColor="#4B0082"
         android:padding="16dp"
         android:shadowColor="#000000"

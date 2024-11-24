@@ -45,7 +45,7 @@ public class ViewTripsActivity extends AppCompatActivity {
         filteredTrips = new ArrayList<>(tripList);
 
         // Initialize adapter
-        tripAdapter = new TripAdapter(this, filteredTrips);
+        tripAdapter = new TripAdapter(this, filteredTrips, this::updateSelectAllCheckbox);
         tripsRecyclerView.setAdapter(tripAdapter);
 
         // Set up Select All checkbox
@@ -127,5 +127,17 @@ public class ViewTripsActivity extends AppCompatActivity {
             // Uncheck Select All checkbox after deletion
             selectAllCheckbox.setChecked(false);
         });
+    }
+
+    // Update Select All checkbox state based on individual trip selections
+    private void updateSelectAllCheckbox() {
+        boolean allSelected = true;
+        for (TripDto trip : filteredTrips) {
+            if (!trip.isSelected()) {
+                allSelected = false;
+                break;
+            }
+        }
+        selectAllCheckbox.setChecked(allSelected);
     }
 }

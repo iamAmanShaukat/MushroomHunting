@@ -4,19 +4,28 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:padding="12dp"
-    android:background="@drawable/tab_background_selector"
-    android:layout_marginBottom="8dp">
+    android:background="@color/white"
+    android:layout_marginBottom="8dp"
+    android:gravity="center_vertical">
+
+    <!-- Individual Checkbox -->
+    <CheckBox
+        android:id="@+id/individual_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp" />
 
     <!-- Trip Name -->
     <TextView
         android:id="@+id/trip_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_weight="2"
         android:text="Trip Name"
         android:textSize="16sp"
-        android:fontFamily="@font/mushroom_font"
-        android:textColor="@color/white" />
+        android:textColor="@color/black"
+        android:ellipsize="end"
+        android:singleLine="true" />
 
     <!-- Trip Date -->
     <TextView
@@ -24,10 +33,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:ellipsize="end"
+        android:singleLine="true"
         android:text="Trip Date"
-        android:textSize="14sp"
-        android:textColor="@color/white"
-        android:visibility="gone" />
+        android:textColor="@color/black"
+        android:textSize="14sp" />
 
     <!-- Trip Location -->
     <TextView
@@ -37,8 +47,9 @@
         android:layout_weight="1"
         android:text="Trip Location"
         android:textSize="14sp"
-        android:textColor="@color/white"
-        android:visibility="gone" />
+        android:textColor="@color/black"
+        android:ellipsize="end"
+        android:singleLine="true" />
 
     <!-- Edit Button -->
     <Button
@@ -56,13 +67,6 @@
         android:id="@+id/delete_icon"
         android:layout_width="24dp"
         android:layout_height="24dp"
-        android:layout_marginEnd="8dp"
         android:src="@drawable/delete_icon"
         android:contentDescription="Delete Icon" />
-
-    <!-- Individual Checkbox -->
-    <CheckBox
-        android:id="@+id/individual_checkbox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
 </LinearLayout>

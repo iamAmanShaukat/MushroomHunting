@@ -64,7 +64,6 @@ public class TripDetailsActivity extends AppCompatActivity {
             noMushroomsTextView.setText("No mushrooms associated with this trip.");
             noMushroomsTextView.setTextSize(16);
             noMushroomsTextView.setTextColor(getResources().getColor(android.R.color.black));
-            noMushroomsTextView.setTypeface(getResources().getFont(R.font.mushroom_font)); // Apply font
             mushroomDetailsContainer.addView(noMushroomsTextView);
         } else {
             // Add details for each mushroom dynamically
@@ -80,7 +79,6 @@ public class TripDetailsActivity extends AppCompatActivity {
                 );
                 mushroomDetailsTextView.setTextSize(16);
                 mushroomDetailsTextView.setTextColor(getResources().getColor(android.R.color.holo_purple));
-                mushroomDetailsTextView.setTypeface(getResources().getFont(R.font.mushroom_font)); // Apply font
                 mushroomDetailsTextView.setPadding(0, 16, 0, 16);
 
                 mushroomDetailsContainer.addView(mushroomDetailsTextView);
