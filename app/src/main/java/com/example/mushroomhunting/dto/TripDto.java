@@ -1,5 +1,9 @@
 package com.example.mushroomhunting.dto;
 
+import android.text.TextUtils;
+
+import androidx.annotation.NonNull;
+
 public class TripDto {
     private String tripId;
     private String tripName;
@@ -73,5 +77,16 @@ public class TripDto {
 
     public void setSelected(boolean selected) { // Setter for the selected property
         this.selected = selected;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return "Name: " + tripName +
+                "\nDate: " + tripDate +
+                "\nTime: " + tripTime +
+                "\nLocation: " + tripLocation +
+                "\nDuration: " + tripDuration +
+                "\nDescription: " + (TextUtils.isEmpty(tripDescription) ? "None" : tripDescription);
     }
 }

@@ -29,6 +29,10 @@ public class Validation {
         if (TextUtils.isEmpty(tripDto.getTripDuration())) {
             return "Please enter expected trip duration";
         }
+
+        if (!TextUtils.isEmpty(tripDto.getTripDescription()) && tripDto.getTripDescription().length() > 250) {
+            return "Description too long";
+        }
         return "";
     }
 
@@ -48,6 +52,9 @@ public class Validation {
 
         if (TextUtils.isEmpty(mushroomDto.getMushroomQuantity())) {
             return "Please enter the quantity of mushrooms found";
+        }
+        if (!TextUtils.isEmpty(mushroomDto.getComments()) && mushroomDto.getComments().length() > 250) {
+            return "Comment too long";
         }
 
         return "";
