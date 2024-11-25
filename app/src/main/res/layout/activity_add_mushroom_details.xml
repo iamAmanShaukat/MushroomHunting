@@ -136,7 +136,7 @@
                         android:layout_width="57dp"
                         android:layout_height="56dp"
                         android:backgroundTint="#800080"
-                        app:cornerRadius="1dp"
+                        app:cornerRadius="12dp"
                         app:icon="@drawable/ic_location"
                         app:iconTint="@color/white"
                         app:layout_constraintBottom_toBottomOf="@id/location_input_layout"
