@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.mushroomhunting.R;
 import com.example.mushroomhunting.activity.EditTripActivity;
 import com.example.mushroomhunting.activity.TripDetailsActivity;
+import com.example.mushroomhunting.db.DatabaseManager;
 import com.example.mushroomhunting.dto.TripDto;
 
 import java.util.List;
@@ -112,8 +113,9 @@ public class TripAdapter extends RecyclerView.Adapter<TripAdapter.TripViewHolder
     }
 
     private void deleteTrip(String tripId) {
+        DatabaseManager databaseManager = new DatabaseManager();
+        databaseManager.deleteTrip(tripId);
         Log.i("Delete", "Deleted trip with ID: " + tripId);
-        // Logic to delete trip from database should be added here
     }
 
     public static class TripViewHolder extends RecyclerView.ViewHolder {
