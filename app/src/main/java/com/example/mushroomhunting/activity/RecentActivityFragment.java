@@ -67,13 +67,13 @@ public class RecentActivityFragment extends Fragment {
             TripDto trip1 = lastTwoTrips.get(0);
             recentActivity1Name.setText(trip1.getTripName());
             recentActivity1Date.setText(trip1.getTripDate());
-            recentActivity1Location.setText(trip1.getTripLocation());
+            recentActivity1Location.setText(trimLocation(trip1.getTripLocation()));
 
             if (lastTwoTrips.size() > 1) {
                 TripDto trip2 = lastTwoTrips.get(1);
                 recentActivity2Name.setText(trip2.getTripName());
                 recentActivity2Date.setText(trip2.getTripDate());
-                recentActivity2Location.setText(trip2.getTripLocation());
+                recentActivity2Location.setText(trimLocation(trip2.getTripLocation()));
             }
         }
     }
@@ -93,5 +93,9 @@ public class RecentActivityFragment extends Fragment {
         }
         intent.putExtra("tripId", tripId);
         startActivity(intent);
+    }
+
+    private String trimLocation(String location) {
+        return location.length() > 20 ? location.substring(0, 20) + "..." : location;
     }
 }
