@@ -1,8 +1,12 @@
 package com.example.mushroomhunting.activity;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.DiffUtil;
@@ -104,7 +108,29 @@ public class ViewTripsActivity extends AppCompatActivity {
 
     // Set up Delete button functionality
     private void setupDeleteButton() {
-        deleteButton.setOnClickListener(v -> {
+        deleteButton.setOnClickListener(v -> showDeleteConfirmationDialog());
+    }
+
+    private void showDeleteConfirmationDialog() {
+        View dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_confirm_delete, null);
+
+        Button confirmButton = dialogView.findViewById(R.id.btn_confirm);
+        Button cancelButton = dialogView.findViewById(R.id.btn_cancel);
+
+        AlertDialog dialog = new AlertDialog.Builder(this)
+                .setView(dialogView)
+                .create();
+
+        confirmButton.setOnClickListener(confirmView -> {
+            deleteSelectedTrips();
+            dialog.dismiss();
+        });
+
+        cancelButton.setOnClickListener(cancelView -> dialog.dismiss());
+        dialog.show();
+    }
+
+    private void deleteSelectedTrips() {
             List<TripDto> tripsToDelete = new ArrayList<>();
 
             // Collect all selected trips
@@ -126,7 +152,6 @@ public class ViewTripsActivity extends AppCompatActivity {
 
             // Uncheck Select All checkbox after deletion
             selectAllCheckbox.setChecked(false);
-        });
     }
 
     // Update Select All checkbox state based on individual trip selections
