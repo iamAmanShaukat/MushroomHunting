@@ -20,6 +20,7 @@ public class PrivacyActivity extends AppCompatActivity {
 
         // Initialize WebView to display the Privacy Policy
         WebView privacyWebView = findViewById(R.id.privacyWebView);
+        privacyWebView.setWebViewClient(new WebViewClient());
 
         // Load the Privacy Policy from a local HTML file
         privacyWebView.loadUrl("file:///android_res/raw/privacy_policy.html");
