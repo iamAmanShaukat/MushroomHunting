@@ -1,73 +1,42 @@
 package com.example.mushroomhunting.activity;
 
-
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.SharedPreferences;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Toast;
-import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mushroomhunting.R;
 
 public class PrivacyActivity extends AppCompatActivity {
-
-    private CheckBox checkboxLocationSharing;
-    private CheckBox checkboxDataCollection;
-    private CheckBox checkboxPhotoSharing;
-    private CheckBox checkboxNotifications;
-    private SharedPreferences sharedPreferences;
-    private SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_privacy);
 
-        // Initialize the views
-        checkboxLocationSharing = findViewById(R.id.checkboxLocationSharing);
-        checkboxDataCollection = findViewById(R.id.checkboxDataCollection);
-        checkboxPhotoSharing = findViewById(R.id.checkboxPhotoSharing);
-        checkboxNotifications = findViewById(R.id.checkboxNotifications);
-        Button buttonSaveSettings = findViewById(R.id.buttonSaveSettings);
+        // Initialize WebView to display the Privacy Policy
+        WebView privacyWebView = findViewById(R.id.privacyWebView);
 
-        // Initialize SharedPreferences to store the privacy settings
-        sharedPreferences = getSharedPreferences("PrivacySettings", MODE_PRIVATE);
-        editor = sharedPreferences.edit();
+        // Load the Privacy Policy from a local HTML file
+        privacyWebView.loadUrl("file:///android_res/raw/privacy_policy.html");
 
-        // Load the existing settings (if any)
-        loadSettings();
+        // Initialize the checkbox and button
+        CheckBox privacyCheckbox = findViewById(R.id.privacyCheckbox);
+        Button acceptButton = findViewById(R.id.acceptButton);
 
-        // Set up the button click listener to save settings
-        buttonSaveSettings.setOnClickListener(v -> saveSettings());
-    }
-
-    private void loadSettings() {
-        // Retrieve saved settings from SharedPreferences
-        boolean locationSharing = sharedPreferences.getBoolean("LocationSharing", false);
-        boolean dataCollection = sharedPreferences.getBoolean("DataCollection", false);
-        boolean photoSharing = sharedPreferences.getBoolean("PhotoSharing", false);
-        boolean notifications = sharedPreferences.getBoolean("Notifications", false);
-
-        checkboxLocationSharing.setChecked(locationSharing);
-        checkboxDataCollection.setChecked(dataCollection);
-        checkboxPhotoSharing.setChecked(photoSharing);
-        checkboxNotifications.setChecked(notifications);
-    }
-
-    private void saveSettings() {
-        // Save the current state of each checkbox to SharedPreferences
-        editor.putBoolean("LocationSharing", checkboxLocationSharing.isChecked());
-        editor.putBoolean("DataCollection", checkboxDataCollection.isChecked());
-        editor.putBoolean("PhotoSharing", checkboxPhotoSharing.isChecked());
-        editor.putBoolean("Notifications", checkboxNotifications.isChecked());
-
-        editor.apply();
-
-        // Show a confirmation message
-        Toast.makeText(this, "Privacy settings saved!", Toast.LENGTH_SHORT).show();
+        // Set click listener for the "Accept" button
+        acceptButton.setOnClickListener(v -> {
+            if (privacyCheckbox.isChecked()) {
+                // Show a toast message if the policy is accepted
+                Toast.makeText(this, "Privacy Policy accepted", Toast.LENGTH_SHORT).show();
+            } else {
+                // Show a toast message if the checkbox is not checked
+                Toast.makeText(this, "Please accept the Privacy Policy", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
-
-

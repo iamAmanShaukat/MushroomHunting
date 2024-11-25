@@ -34,7 +34,7 @@ public class SettingsActivity extends AppCompatActivity {
         textViewHelp.setOnClickListener(v -> openHelpActivity());
         textViewPrivacy.setOnClickListener(v -> openPrivacyActivity());
         textViewSync.setOnClickListener(v -> openSyncSettingsActivity());
-        textViewDelete.setOnClickListener(v -> openDeleteAccountActivity());
+        textViewDelete.setOnClickListener(v -> openClearAccountActivity());
     }
 
     private void openHelpActivity() {
@@ -59,9 +59,9 @@ public class SettingsActivity extends AppCompatActivity {
 
     }
 
-    private void openDeleteAccountActivity() {
-        // Navigate to DeleteAccountActivity (to be created)
-        Intent intent = new Intent(SettingsActivity.this, DeleteActivity.class);
+    private void openClearAccountActivity() {
+        // Navigate to ClearAccountActivity (to be created)
+        Intent intent = new Intent(SettingsActivity.this, ClearActivity.class);
         startActivity(intent);
     }
 

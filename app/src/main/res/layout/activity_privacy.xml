@@ -1,54 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:layout_height="match_parent">
 
-    <!-- Title TextView -->
-    <TextView
-        android:id="@+id/privacy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Privacy Settings"
-        android:textSize="20sp"
-        android:paddingBottom="20dp" />
+    <!-- WebView to display the Privacy Policy -->
+    <WebView
+        android:id="@+id/privacyWebView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/footerLayout" />
 
-    <!-- CheckBox for Location Sharing -->
-    <CheckBox
-        android:id="@+id/checkboxLocationSharing"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Enable Location Sharing" />
-
-    <!-- CheckBox for Data Collection -->
-    <CheckBox
-        android:id="@+id/checkboxDataCollection"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Allow Data Collection for Analytics" />
-
-    <!-- CheckBox for Photo Sharing -->
-    <CheckBox
-        android:id="@+id/checkboxPhotoSharing"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Share Photos of Mushrooms with Community" />
-
-    <!-- CheckBox for Notifications -->
-    <CheckBox
-        android:id="@+id/checkboxNotifications"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Receive Privacy Updates via Notifications" />
-
-    <!-- Save Button -->
-    <Button
-        android:id="@+id/buttonSaveSettings"
+    <!-- the checkbox and button -->
+    <LinearLayout
+        android:id="@+id/footerLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Save Settings"
-        android:layout_marginTop="20dp" />
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center">
 
-</LinearLayout>
+        <CheckBox
+            android:id="@+id/privacyCheckbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="I agree to the Privacy Policy" />
+
+        <Button
+            android:id="@+id/acceptButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Accept"
+            android:layout_marginStart="16dp" />
+    </LinearLayout>
+</RelativeLayout>

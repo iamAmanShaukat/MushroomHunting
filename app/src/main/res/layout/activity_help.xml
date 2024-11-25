@@ -48,11 +48,28 @@
 
 
     <TextView
+        android:id="@+id/helpAnswer3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="You can add a new trip b going to the main screen and click on Add new trips, fill in the detailsand save.."
+        android:textSize="16sp"
+        android:padding="8dp" />
+
+
+    <TextView
         android:id="@+id/helpQuestion4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="How can i delete my recent trip?"
         android:textSize="18sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/helpAnswer4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="To delete recent trips, go to the main screen, click on view trips and you will be able to select the trips you want to delete."
+        android:textSize="16sp"
         android:padding="8dp" />
 
     <TextView
@@ -69,11 +86,8 @@
         android:layout_height="wrap_content"
         android:text="Contact our customer service 01-234-567."
         android:textSize="16sp"
-        android:padding="8dp" />
+        android:padding="8dp"
         android:textColor="#4B0082"
-        android:padding="16dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp" />
 

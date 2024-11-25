@@ -51,7 +51,7 @@
         <activity android:name=".activity.TripDetailsActivity" />
 
         <!-- Delete Activity Declaration -->
-        <activity android:name=".activity.DeleteActivity" />
+        <activity android:name=".activity.ClearActivity" />
 
         <!-- Privacy Activity Declaration -->
         <activity android:name=".activity.PrivacyActivity" />

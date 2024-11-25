@@ -19,13 +19,17 @@ public class HelpActivity extends AppCompatActivity {
             TextView question2 = findViewById(R.id.helpQuestion2);
             TextView answer2 = findViewById(R.id.helpAnswer2);
             TextView question3 = findViewById(R.id.helpQuestion3);
+            TextView answer3 = findViewById(R.id.helpAnswer3);
             TextView question4 = findViewById(R.id.helpQuestion4);
+            TextView answer4 = findViewById(R.id.helpAnswer4);
             TextView question5 = findViewById(R.id.helpQuestion5);
             TextView answer5 = findViewById(R.id.helpAnswer5);
 
             // Initially hide answers
             answer1.setVisibility(View.GONE);
             answer2.setVisibility(View.GONE);
+            answer3.setVisibility(View.GONE);
+            answer4.setVisibility(View.GONE);
             answer5.setVisibility(View.GONE);
 
             // Toggle visibility for Question 1
@@ -46,6 +50,24 @@ public class HelpActivity extends AppCompatActivity {
                 }
             });
 
+            // Toggle visibility for Question 3
+            question3.setOnClickListener(v -> {
+                if (answer3.getVisibility() == View.VISIBLE) {
+                    answer3.setVisibility(View.GONE);
+                } else {
+                    answer3.setVisibility(View.VISIBLE);
+                }
+            });
+
+            // Toggle visibility for Question 4
+            question4.setOnClickListener(v -> {
+                if (answer4.getVisibility() == View.VISIBLE) {
+                    answer4.setVisibility(View.GONE);
+                } else {
+                    answer4.setVisibility(View.VISIBLE);
+                }
+            });
+
             // Toggle visibility for Question 5
             question5.setOnClickListener(v -> {
                 if (answer5.getVisibility() == View.VISIBLE) {
@@ -55,10 +77,5 @@ public class HelpActivity extends AppCompatActivity {
                 }
             });
 
-            question3.setOnClickListener(v -> {
-            });
-
-            question4.setOnClickListener(v -> {
-            });
         }
     }
