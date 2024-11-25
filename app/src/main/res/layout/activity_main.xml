@@ -66,12 +66,12 @@
 
         <ImageView
             android:id="@+id/background_img_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="368dp"
+            android:layout_height="121dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.666"
+            app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/bg_1" />
 
         <ImageView
@@ -90,7 +90,7 @@
             android:layout_height="wrap_content"
             android:text="Add New Trip"
             android:textSize="18sp"
-            android:textColor="#000000"
+            android:textColor="@color/text_primary"
             app:layout_constraintStart_toEndOf="@+id/addTripIcon"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -112,8 +112,8 @@
 
         <ImageView
             android:id="@+id/background_img_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="368dp"
+            android:layout_height="121dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -136,7 +136,7 @@
             android:layout_height="wrap_content"
             android:text="View Trips"
             android:textSize="18sp"
-            android:textColor="#000000"
+            android:textColor="@color/text_primary"
             app:layout_constraintStart_toEndOf="@+id/viewTripsIcon"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -158,8 +158,8 @@
 
         <ImageView
             android:id="@+id/background_img_3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="368dp"
+            android:layout_height="121dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -182,7 +182,7 @@
             android:layout_height="wrap_content"
             android:text="Add Mushroom Details"
             android:textSize="18sp"
-            android:textColor="#000000"
+            android:textColor="@color/text_primary"
             app:layout_constraintStart_toEndOf="@+id/addMushroomIcon"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
