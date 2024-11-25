@@ -146,21 +146,6 @@
                         app:layout_constraintBottom_toBottomOf="@id/location_input_layout" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <!-- Camera Button -->
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/camera_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="Take Picture"
-                    android:backgroundTint="#800080"
-                    app:icon="@drawable/ic_camera"
-                    app:iconGravity="textStart"
-                    app:iconPadding="8dp"
-                    app:cornerRadius="12dp"
-                    app:backgroundTint="@color/primary_color"
-                    android:textColor="@android:color/white" />
-
                 <!-- Quantity -->
                 <TextView
                     android:id="@+id/mushroom_quantity_label"
