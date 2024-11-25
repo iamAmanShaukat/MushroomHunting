@@ -56,5 +56,5 @@
         android:clickable="true"
         android:drawableStart="@drawable/delete_icon"
         android:drawablePadding="3dp"
-        android:focusable="true" />
+        android:focusable="true"/>
 </LinearLayout>

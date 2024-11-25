@@ -51,7 +51,7 @@
         android:id="@+id/helpAnswer3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="You can add a new trip b going to the main screen and click on Add new trips, fill in the detailsand save.."
+        android:text="You can add a new trip by going to the main screen and click on Add new trips, fill in the details and save.."
         android:textSize="16sp"
         android:padding="8dp" />
 
@@ -91,6 +91,5 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp" />
 
-    <!-- Add more questions and answers as needed -->
 
 </LinearLayout>

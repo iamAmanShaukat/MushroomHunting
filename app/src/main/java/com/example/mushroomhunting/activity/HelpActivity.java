@@ -12,7 +12,7 @@ public class HelpActivity extends AppCompatActivity {
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_help); // Ensure this matches your XML layout file name
+            setContentView(R.layout.activity_help);
 
             TextView question1 = findViewById(R.id.helpQuestion1);
             TextView answer1 = findViewById(R.id.helpAnswer1);

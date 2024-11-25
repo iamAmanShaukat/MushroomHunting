@@ -10,7 +10,7 @@ android:padding="16dp">
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="By clicking clear data, you will lose all your data!"
-    android:textSize="20sp"
+    android:textSize="18sp"
     android:layout_marginBottom="20dp"/>
 
 <!-- Clear data Button -->

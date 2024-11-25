@@ -19,7 +19,6 @@ public class ClearActivity extends AppCompatActivity {
         Button buttonClear = findViewById(R.id.buttonClear);
 
         buttonClear.setOnClickListener(v -> {
-            // Show the delete confirmation dialog
             showClearConfirmationDialog();
         });
     }

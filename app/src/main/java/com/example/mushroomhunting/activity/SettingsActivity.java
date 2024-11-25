@@ -24,7 +24,6 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        // Find the TextViews by their IDs
         TextView textViewHelp = findViewById(R.id.textViewHelp);
         TextView textViewPrivacy = findViewById(R.id.textViewPrivacy);
         TextView textViewSync = findViewById(R.id.textViewSync);

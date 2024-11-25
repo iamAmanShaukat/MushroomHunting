@@ -14,7 +14,6 @@
         android:layout_alignParentTop="true"
         android:layout_above="@+id/footerLayout" />
 
-    <!-- the checkbox and button -->
     <LinearLayout
         android:id="@+id/footerLayout"
         android:layout_width="match_parent"

@@ -25,7 +25,6 @@ public class PrivacyActivity extends AppCompatActivity {
         // Load the Privacy Policy from a local HTML file
         privacyWebView.loadUrl("file:///android_res/raw/privacy_policy.html");
 
-        // Initialize the checkbox and button
         CheckBox privacyCheckbox = findViewById(R.id.privacyCheckbox);
         Button acceptButton = findViewById(R.id.acceptButton);
 
