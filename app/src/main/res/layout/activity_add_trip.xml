@@ -148,38 +148,49 @@
                     </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
 
-                <!-- Location -->
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/location_layout"
+                <!-- Location Input and Button -->
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:hint="Location"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    app:startIconDrawable="@drawable/ic_location"
-                    app:startIconTint="#800080"
-                    app:hintTextColor="#800080"
-                    app:boxStrokeColor="#800080">
+                    android:layout_marginTop="16dp">
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/location_input"
-                        android:layout_width="match_parent"
+                    <!-- Enter Location Field -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/location_input_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:inputType="text"
-                        android:textColor="#000000" />
-                </com.google.android.material.textfield.TextInputLayout>
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/useCurrentLocationButton"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:hint="Location"
+                        app:startIconDrawable="@drawable/ic_location"
+                        app:startIconTint="#800080"
+                        app:hintTextColor="#800080"
+                        app:boxStrokeColor="#800080">
 
-                <!-- Button to fetch current location -->
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/useCurrentLocationButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Use Current Location"
-                    android:textAllCaps="false"
-                    android:backgroundTint="#800080"
-                    app:cornerRadius="12dp"
-                    android:elevation="4dp" />
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/location_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            android:textColor="#000000" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Current Location Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/useCurrentLocationButton"
+                        android:layout_width="60dp"
+                        android:layout_height="56dp"
+                        android:layout_marginStart="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/location_input_layout"
+                        app:layout_constraintBottom_toBottomOf="@id/location_input_layout"
+                        app:cornerRadius="12dp"
+                        app:icon="@drawable/ic_location"
+                        android:backgroundTint="#800080" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <!-- Duration -->
                 <com.google.android.material.textfield.TextInputLayout

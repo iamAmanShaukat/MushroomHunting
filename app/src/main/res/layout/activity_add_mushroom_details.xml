@@ -103,33 +103,47 @@
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                <!-- Location Input and Button -->
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    app:boxCornerRadiusBottomEnd="12dp"
-                    app:boxCornerRadiusBottomStart="12dp"
-                    app:boxCornerRadiusTopEnd="12dp"
-                    app:boxCornerRadiusTopStart="12dp">
+                    android:layout_marginTop="8dp">
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/mushroom_location_input"
-                        android:layout_width="match_parent"
+                    <!-- Enter Location Field -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/location_input_layout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:hint="Enter location" />
-                </com.google.android.material.textfield.TextInputLayout>
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/curr_location_btn"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent">
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/curr_location_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:layout_marginTop="8dp"
-                    android:text="Use current location"
-                    app:cornerRadius="12dp"
-                    app:icon="@drawable/ic_location"
-                    app:iconTint="@color/white" />
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/mushroom_location_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp"
+                            android:hint="Enter location" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Current Location Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/curr_location_btn"
+                        android:layout_width="57dp"
+                        android:layout_height="56dp"
+                        android:layout_marginStart="8dp"
+                        app:cornerRadius="12dp"
+                        app:icon="@drawable/ic_location"
+                        app:iconTint="@color/white"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/location_input_layout"
+                        app:layout_constraintBottom_toBottomOf="@id/location_input_layout" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <!-- Quantity -->
                 <TextView
