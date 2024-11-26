@@ -356,4 +356,34 @@ public class DatabaseManager {
             if (db != null && db.isOpen()) db.close();
         }
     }
-}
+
+    public void clearAllData() {
+        SQLiteDatabase db = null;
+
+        try {
+            db = dbHelper.getWritableDatabase();
+
+            // Start a transaction for data consistency
+            db.beginTransaction();
+
+            // Delete all rows from the mushrooms table
+            int mushroomsDeleted = db.delete(AppConstants.TABLE_MUSHROOM, null, null);
+
+            // Delete all rows from the trips table
+            int tripsDeleted = db.delete(AppConstants.TABLE_TRIP, null, null);
+
+            // Mark the transaction as successful
+            db.setTransactionSuccessful();
+
+            Log.i(TAG, "Cleared all data. Trips deleted: " + tripsDeleted + ", Mushrooms deleted: " + mushroomsDeleted);
+
+        } catch (SQLiteException e) {
+            Log.e(TAG, "Database error when clearing all data: " + e.getMessage());
+        } finally {
+            if (db != null) {
+                // End the transaction
+                db.endTransaction();
+                db.close();
+            }
+        }
+    }}
