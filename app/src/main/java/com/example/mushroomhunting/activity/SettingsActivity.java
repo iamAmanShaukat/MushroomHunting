@@ -53,7 +53,7 @@ public class SettingsActivity extends AppCompatActivity {
         // Navigate to SyncSettingsActivity (to be created)
         List<TripDto> allTrips = databaseManager.getAllTrips();
         cloudHelper.publishToFirebase(allTrips);
-        Toast.makeText(this, "Please select a trip first.", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Data synced successfully", Toast.LENGTH_SHORT).show();
 
 
     }
