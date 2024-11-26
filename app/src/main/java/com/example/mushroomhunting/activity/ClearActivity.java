@@ -25,6 +25,7 @@ public class ClearActivity extends AppCompatActivity {
         databaseReference = FirebaseDatabase.getInstance().getReference("Trips");
         databaseManager = new DatabaseManager();
 
+        // Initialise button and set an OnClickListener
         Button buttonClear = findViewById(R.id.buttonClear);
 
         buttonClear.setOnClickListener(v -> showClearConfirmationDialog());
@@ -32,7 +33,7 @@ public class ClearActivity extends AppCompatActivity {
 
 
     private void showClearConfirmationDialog() {
-        // Create the alert dialog
+        // Creates the alert dialog
         new AlertDialog.Builder(this)
                 .setTitle("Confirm Deletion")
                 .setMessage("Are you sure you want to clear all Data?")
