@@ -15,7 +15,7 @@ public class ClearActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clear);
 
-        // Initialize button and set an OnClickListener
+        // Initialise button and set an OnClickListener
         Button buttonClear = findViewById(R.id.buttonClear);
 
         buttonClear.setOnClickListener(v -> {
@@ -24,7 +24,7 @@ public class ClearActivity extends AppCompatActivity {
     }
 
     private void showClearConfirmationDialog() {
-        // Create the alert dialog
+        // Creates the alert dialog
         new AlertDialog.Builder(this)
                 .setTitle("Confirm Deletion")
                 .setMessage("Are you sure you want to clear this item?")

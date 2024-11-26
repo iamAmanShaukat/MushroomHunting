@@ -98,7 +98,9 @@ public class AddMushroomDetailsActivity extends AppCompatActivity {
 
         // Create location request
         LocationRequest locationRequest = LocationRequest.create();
+
         locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+
         locationRequest.setInterval(10000); // Update every 10 seconds
 
         fusedLocationClient.requestLocationUpdates(locationRequest, new LocationCallback() {
