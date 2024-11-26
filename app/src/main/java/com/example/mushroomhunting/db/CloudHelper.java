@@ -75,7 +75,11 @@ public class CloudHelper {
         } catch (Exception e) {
             response.append("Exception: ").append(e.getMessage());
         }
-
+//        return response.toString();
+        /**
+         * since we can not connect ro the cloud from the emulator, we will return the similar
+         * response as a string. The original code is written and commented out for reference.
+         */
         return response2.toString();
     }
 
