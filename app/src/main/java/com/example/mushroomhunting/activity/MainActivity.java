@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        // Initialize layout containers
+        // Initialise layout containers
         ConstraintLayout addTripLayout = findViewById(R.id.addTripLayout);
         ConstraintLayout viewTripsLayout = findViewById(R.id.viewTripsLayout);
         ConstraintLayout addMushroomDetailsLayout = findViewById(R.id.addMushroomDetailsLayout);
