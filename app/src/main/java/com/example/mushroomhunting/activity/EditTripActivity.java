@@ -21,7 +21,7 @@ public class EditTripActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_trip);
 
-        // Initialize DatabaseManager
+        // Initialise DatabaseManager
         databaseManager = new DatabaseManager();
 
         // Get tripId from Intent
@@ -35,10 +35,10 @@ public class EditTripActivity extends AppCompatActivity {
         tripDurationInput = findViewById(R.id.edit_trip_duration);
         tripDescriptionInput = findViewById(R.id.edit_trip_description);
 
-        // Load trip details
+        // Loads trip details
         loadTripDetails();
 
-        // Save changes
+        // Saves changes
         findViewById(R.id.save_trip_button).setOnClickListener(v -> saveTripDetails());
     }
 
