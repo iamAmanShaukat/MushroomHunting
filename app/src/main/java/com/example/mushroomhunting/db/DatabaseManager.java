@@ -381,7 +381,6 @@ public class DatabaseManager {
             Log.e(TAG, "Database error when clearing all data: " + e.getMessage());
         } finally {
             if (db != null) {
-                // End the transaction
                 db.endTransaction();
                 db.close();
             }

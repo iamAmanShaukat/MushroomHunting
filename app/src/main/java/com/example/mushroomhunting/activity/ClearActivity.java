@@ -25,7 +25,6 @@ public class ClearActivity extends AppCompatActivity {
         databaseReference = FirebaseDatabase.getInstance().getReference("Trips");
         databaseManager = new DatabaseManager();
 
-        // Initialize button and set an OnClickListener
         Button buttonClear = findViewById(R.id.buttonClear);
 
         buttonClear.setOnClickListener(v -> showClearConfirmationDialog());
