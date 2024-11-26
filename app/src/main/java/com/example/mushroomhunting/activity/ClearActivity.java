@@ -28,9 +28,7 @@ public class ClearActivity extends AppCompatActivity {
         // Initialize button and set an OnClickListener
         Button buttonClear = findViewById(R.id.buttonClear);
 
-        buttonClear.setOnClickListener(v -> {
-            showClearConfirmationDialog();
-        });
+        buttonClear.setOnClickListener(v -> showClearConfirmationDialog());
     }
 
 
